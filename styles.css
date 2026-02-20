@@ -1,0 +1,88 @@
+/* Tipografía y resets básicos */
+:root{
+  --bg: #0b1020;
+  --card: #0f172a;
+  --text: #e6f1ff;
+  --muted: #9db3d8;
+  --brand: #0ea5a3; /* teal */
+  --brand-2: #34d399; /* emerald */
+  --accent: #f59e0b; /* amber */
+  --danger: #ef4444;
+  --ring: 0 0 0 3px rgb(14 165 163 / .2)
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji"; background:var(--bg); color:var(--text); line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brand)}
+.container{width:min(1100px, 92vw); margin-inline:auto}
+.section{padding:64px 0}
+.section--alt{background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));}
+
+/* Header & nav */
+.site-header{position:sticky; top:0; z-index:20; backdrop-filter: blur(8px); background: rgba(11,16,32,.75); border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+.brand{display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none; font-weight:600}
+.nav__toggle{display:none; background:none; color:var(--text); border:1px solid rgba(255,255,255,.15); padding:8px 12px; border-radius:8px}
+.nav__list{display:flex; gap:18px; list-style:none; margin:0; padding:0}
+.nav__list a{color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:8px}
+.nav__list a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+
+/* Hero */
+.hero{display:grid; grid-template-columns: 1.25fr 1fr; gap:28px; align-items:center; padding:48px 0}
+.hero__copy h1{font-size: clamp(2rem, 3.5vw, 3rem); margin:0 0 6px}
+.lead{font-size:1.125rem; color:var(--muted)}
+.highlight{color:var(--accent); font-weight:600}
+.cta{display:flex; gap:12px; margin-top:16px}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:10px; border:1px solid transparent; text-decoration:none; color:var(--text); font-weight:600; box-shadow: 0 8px 30px -12px rgba(14,165,163,.75)}
+.btn--primary{background: linear-gradient(90deg, var(--brand), var(--brand-2))}
+.btn--ghost{border-color:rgba(255,255,255,.15); background:transparent}
+
+/* Pills & Cards */
+.pill-grid{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+.pill{background:rgba(14,165,163,.12); color:#9ff; border:1px solid rgba(14,165,163,.3); padding:6px 10px; border-radius:999px; font-size:.9rem}
+.cards{display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:14px}
+.card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:16px; box-shadow: 0 10px 30px -20px #000}
+.card h3{margin-top:0}
+
+/* Features */
+.features{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px}
+.feature{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:16px}
+.feature h3{margin-top:0}
+
+/* Pricing */
+.pricing{display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:14px}
+.tier{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:16px}
+
+/* Value grid */
+.value-grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:14px}
+
+/* Form */
+.form{max-width:680px}
+.form__row{display:flex; flex-direction:column; gap:6px; margin-bottom:12px}
+input, textarea{background:#0b132e; color:var(--text); border:1px solid rgba(255,255,255,.15); border-radius:10px; padding:10px}
+input:focus, textarea:focus{outline:none; box-shadow: var(--ring); border-color: var(--brand)}
+button{cursor:pointer}
+
+/* Footer */
+.site-footer{border-top:1px solid rgba(255,255,255,.06); padding:24px 0; background:#0b1020}
+.footer__inner{display:flex; flex-direction:column; gap:6px; color:var(--muted)}
+.small{font-size:.85rem}
+
+/* Responsive */
+@media (max-width: 860px){
+  .hero{grid-template-columns: 1fr;}
+  .nav__toggle{display:inline-flex}
+  .nav__list{display:none}
+  .nav__list.open{display:flex; flex-direction:column; position:absolute; right:16px; top:62px; background:rgba(11,16,32,.98); padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,.08)}
+}
+div.prox{
+  text-align: center;
+  padding: 40px;
+  background: rgba(200, 199, 199, 0.15);
+  border-radius: 14px;
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
